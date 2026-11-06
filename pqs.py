@@ -1,3 +1,6 @@
+pip install open-quantum-safe
+
+
 import hashlib
 import time
 import json
