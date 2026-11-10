@@ -7,6 +7,16 @@
 #include <memory>
 #include <chrono>
 
+
+//• Time Priority: Orders are filled first by best price, and then by the earliest arrival time at that price level for displayed limit orders.
+• Ultra-Low Latency: Production matching architectures operate at microsecond speeds—frequently sub-40 microseconds down to around 14 microseconds door-to-door.
+• Standard Industry Protocols:
+	• FIX (Financial Information eXchange): For order routing and management.
+	• OUCH / ITCH: Low-latency protocols for fast order entry (OUCH) and real-time market data/order book feeds (ITCH).
+	• SoupBinTCP / MoldUDP64: Transport-level framing for reliable or multicast stream delivery.
+• Multi-Asset & Scalable: Designed to handle equities, options, fixed income, foreign exchange, crypto, and fractionalized assets with horizontal scalability.
+
+
 // Simplified Nasdaq Order Book Types
 enum class Side { BUY, SELL };
 
