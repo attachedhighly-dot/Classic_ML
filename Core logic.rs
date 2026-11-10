@@ -1,3 +1,17 @@
+
+//
+
+Production Rules Applied in this Code
+
+• No Floats: Prices and quantities are typed as u64 representing fixed-point integers (e.g., multiplying raw values by 10⁸ to support Satoshis/Gwei). Floating-point math introduces rounding errors that can cause unresolvable balance gaps over millions of trades.
+• Time Priority: Inside the queues (VecDeque), push_back inserts new orders at the end, while pop_front ensures orders placed first at a given price level match first.
+• Immediate Settlement Event generation: The function returns a vector of Trade structs. In a production pipeline, these trades are immediately dispatched into an asynchronous event stream (like Kafka) to trigger user balance updates in the relational ledger database.
+
+
+
+
+
+
 impl OrderBook {
     pub fn limit_order(&mut self, mut taker_order: Order, side: OrderSide) -> Vec<Trade> {
         let mut trades = Vec::new();
